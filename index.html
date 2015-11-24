@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Off Canvas</title>
+	<link rel="stylesheet" type="text/css" href="estilos.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div class"container">
+		<section id="sidePanel" class="c1">
+			<h1> Menu </h1>
+		</section>
+		<section id="mainPanel" class="c2">
+			<h1> Texto </h1>
+		</section>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.4/hammer.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		(function() {
+			var mainPanel = document.getElementById('mainPanel');
+			var sidePanel = document.getElementById('sidePanel');
+
+			var hammerPanel = new Hammer(mainPanel);
+			var hammerSide = new Hammer(sidePanel);
+
+			hammerPanel.on('swiperight', function() {
+			 	sidePanel.classList.toggle('open');
+			 });
+			hammerPanel.on('swipeleft', function() {
+			 	sidePanel.classList.toggle('open');
+			 });
+		});
+	</script>
+</body>
+</html>
